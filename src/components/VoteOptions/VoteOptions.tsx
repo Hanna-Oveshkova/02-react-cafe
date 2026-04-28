@@ -10,10 +10,20 @@ interface Props {
 const VoteOptions = ({ onVote, onReset, canReset }: Props) => {
   return (
     <div className={css.options}>
-      <button onClick={() => onVote("good")}>Good</button>
-      <button onClick={() => onVote("neutral")}>Neutral</button>
-      <button onClick={() => onVote("bad")}>Bad</button>
-      {canReset && <button onClick={onReset}>Reset</button>}
+      <button className={css.button} onClick={() => onVote("good")}>
+        Good
+      </button>
+      <button className={css.button} onClick={() => onVote("neutral")}>
+        Neutral
+      </button>
+      <button className={css.button} onClick={() => onVote("bad")}>
+        Bad
+      </button>
+      {canReset && (
+        <button className={`${css.button} ${css.reset}`} onClick={onReset}>
+          Reset
+        </button>
+      )}
     </div>
   );
 };
