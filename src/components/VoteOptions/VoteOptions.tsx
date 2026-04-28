@@ -9,7 +9,7 @@ interface Props {
 
 const VoteOptions = ({ onVote, onReset, canReset }: Props) => {
   return (
-    <div className={css.options}>
+    <div className={css.container}>
       <button className={css.button} onClick={() => onVote("good")}>
         Good
       </button>
